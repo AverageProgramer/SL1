@@ -1,0 +1,17 @@
+<html>
+
+	<body>
+		 <a href="esp_squad.html">
+  			<img src="spain.png" alt="HTML tutorial" style="width:20%;height:20%;border:0;">
+		</a>
+		
+		<a href="ger_squad.html">
+  			<img src="germany.png" alt="HTML tutorial" style="width:20%;height:20%;border:0;">
+		</a>
+		
+		<a href="eng_squad.html">
+  			<img src="england.jpeg" alt="HTML tutorial" style="width:20%;height:20%;border:0;">
+		</a> 
+	</body>
+
+</html>

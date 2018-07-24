@@ -1,0 +1,32 @@
+<html>
+
+	<title> SQUADS </title>
+		
+  	  <head>
+
+		<h3 style = "color:DodgerBlue;"> 
+		<div align = "center">  
+			WORLD CUP SQUADS 
+		</div>
+		</h3>
+
+	</head>
+
+	<body>
+		
+		<div style="float:left; width:20%; height:50%;background-color:rgb(120,120,120); color:white;">
+				<ul>
+					<li> <button type= "button">Europe</button> </li>
+					<li> <button type= "button">America</button> </li>
+					<li> <button type= "button">Others</button> </li>
+				</ul> 
+		</div>
+		
+		<iframe src="https://www.geeksforgeeks.org/dbms-keys-candidate-super-primary-alternate-and-foreign/" width="75%" height="50%" align="right">
+  <p>Your browser does not support iframes.</p>
+</iframe>				
+	
+	<body>
+
+
+</html>

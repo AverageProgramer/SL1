@@ -1,0 +1,9 @@
+select * from ordering order by order_id ,total_amt desc;select * from ordering order by order_id ,total_amt desc;
+
+select cust_name from customer where cust_name like 'rav%';
+
+select cust_id from ordering where total_amt in(select max(total_amt)from ordering);
+
+select cust_name from customer where cust_id in(select cust_id from ordering where total_amt in(select max(total_amt)from ordering));
+
+select *  from ordering where cust_id in (select cust_id from customer where city='pune') and order_date='2016-08-22';

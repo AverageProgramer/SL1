@@ -1,0 +1,10 @@
+
+Transaction Details
+
+Transaction Status	      Transaction Successful
+Surcharge	                  1004.12
+Transaction Amount	      94550.00
+Transaction Date	            Wed Jun 13 18:52:29 IST 2018
+Transaction Reference No	18061300000529
+Transaction No.	            02181643279000
+Recipt No.                    20181982    

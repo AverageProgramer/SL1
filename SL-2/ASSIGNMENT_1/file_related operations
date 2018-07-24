@@ -1,0 +1,6 @@
+-f file		file exists and is a regular file
+-r file		file exists and is a readable
+-w file		file exists and is a writable
+-x file		file exists and is a executable
+-d file		file exists and is a directory
+-s file		file exists and has a size greater than zero

@@ -1,0 +1,59 @@
+create table customer(
+cust_id	int,
+cust_name varchar(255),
+city varchar(255),
+street varchar(255),
+order_id int
+);
+
+create table product(
+prod_id int,
+prod_name varchar(255),
+type varchar(255),
+price int,
+discount int
+);
+
+create table ordering(
+prod_id int,
+order_id int,
+cust_id int,
+qty int,
+total_amt int,
+order_date date
+);
+
+alter table customer
+add primary key (cust_id);
+
+alter table product 
+add primary key (prod_id);
+
+alter table ordering
+add foreign key (cust_id) references customer(cust_id);   
+
+alter table ordering
+add foreign key (prod_id) references product(prod_id);   
+
+insert into customer values(1,'ramesh','pune','katraj','123');
+insert into customer values(2,'suresh','pune','katraj','124');
+insert into customer values(3,'umesh','mumbai','dharavi','125');
+insert into customer values(4,'bhavesh','nagpur','omkar','126');
+insert into customer values(5,'suresh','pune','katraj','127');
+insert into customer values(6,'ravi','mumbai','dharavi','128');
+insert into customer values(7,'ravi','mumbai','dharavi','129');
+
+insert into product values(1,'let us c','c',980,0);
+insert into product values(2,'horowitz','algorithms',700,0);
+insert into product values(3,'wings of fire','inspiration',100,0);
+insert into product values(4,'famous five','novel',160,0);
+insert into product values(5,'kuch toh log kahenge','biography',80,0);
+insert into product values(6,'contemplating life','inspiration',180,0);
+
+insert into ordering values(1,123,1,2,980,'2018-07-11');
+insert into ordering values(2,124,2,1,980,'2018-07-13');
+insert into ordering values(3,125,3,1,700,'2018-08-13');
+insert into ordering values(4,126,4,1,100,'2018-07-13');
+insert into ordering values(5,127,5,1,160,'2017-08-13');
+insert into ordering values(6,128,6,1,80,'2018-07-06');
+insert into ordering values(7,129,7,1,180,'2018-07-13');

@@ -1,0 +1,24 @@
+select customer.cust_name, product.prod_name, product.type, ordering.qty, ordering.total_amt
+from((ordering 
+inner join customer on ordering.cust_id = customer.cust_id) 
+inner join product on ordering.prod_id = product.prod_id)
+where product.type not in('biography','novel');
+
+select product.prod_name, ordering.qty
+from(ordering
+inner join product on ordering.prod_id = product.prod_id)
+where ordering.qty not in (2,10);
+
+select * from product where price > 160;
+
+select customer.cust_name, product.prod_name, max(product.type), ordering.qty, ordering.total_amt
+from((ordering 
+inner join customer on ordering.cust_id = customer.cust_id) 
+inner join product on ordering.prod_id = product.prod_id);
+
+select customer.cust_name, product.prod_name, product.type, ordering.qty, ordering.total_amt
+from((ordering 
+inner join customer on ordering.cust_id = customer.cust_id) 
+inner join product on ordering.prod_id = product.prod_id) 
+where qty in(select max(qty) from ordering);
+

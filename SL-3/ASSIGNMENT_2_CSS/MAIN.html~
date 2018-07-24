@@ -1,0 +1,111 @@
+<html>
+
+	<title> SQUADS </title>
+
+  	  <head>
+
+		<h2 style = "color:DodgerBlue;">
+		<div align = "center">
+			WORLD CUP SQUADS
+		</div>
+		</h2>
+
+		<style>
+			body
+			{
+			    margin: 0;
+			}
+
+			.dropdown
+			{
+			    position: relative;
+			    display: inline-block;
+			}
+
+			.dropdown-content
+			 {
+				    display: none;
+				    position: absolute;
+				    background-color: #f9f9f9;
+				    color:#000000
+				    min-width: 160px;
+				    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				    padding: 15px 25px;
+				    z-index: 1;
+			}
+
+			.dropdown:hover .dropdown-content
+			{
+			    display: block;
+			}
+
+			ul
+			 {
+			    list-style-type: none;
+			    margin: 0px;
+			    padding: 0;
+			    width: 22%;
+			    background-color: #4abdac;
+			    position: fixed;
+			    height: 50%;
+			    overflow: auto;
+			}
+
+			li a
+			 {
+			    display: block;
+			    color: #000;
+			    padding: 8px 16px;
+			    text-decoration: none;
+			}
+
+			li a:hover
+			{
+				background-color: #9068be;
+			}
+			</style>
+
+	</head>
+
+	<body>
+
+		<iframe src="starter.html" width="75%" height="50%" align="right" name="WC"style="background-color: rgb(0,143,149);"></iframe>
+
+		<ul>
+
+			<li><div class="dropdown">
+			  <a  href="europe.html" target="WC"> <span><h3>Europe</h3></span>
+				<div class="dropdown-content">
+				<a href="esp_squad.html">Spain</a>
+				<a herf="ger_squad.html">Germany</a>
+				<a href="eng_squad.html">England</a>
+				</div>
+			</a></li>
+			</div>
+
+			<li><div class="dropdown">
+			  <a href="america.html" target="WC"> <span><h3>America</h3></span>
+				<div class="dropdown-content">
+				<a href="arg_squad.html">Argentina</a>
+				<a href="brz_squad.html">Brazil</a>
+				<a href="col_squad.html">Columbia</a>
+				</div>
+			  </a></li>
+			  </div>
+
+			  <li><div class="dropdown">
+			  <a href="asia.html" target="WC"> <span><h3>Asia</h3></span>
+  				<div class="dropdown-content">
+				<a href="sutk_squad.html">South Korea</a>
+				<a href="jap_squad.html">Japan</a>
+				<a href="ira.html">Iran</a>
+				</div>
+			  </a></li>
+	  		 </div>
+
+		</ul>
+
+	<body>
+
+
+</html>
