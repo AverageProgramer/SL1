@@ -1,0 +1,15 @@
+# !/bin/sh
+
+#grep -n 4 test | gawk '{print $1}' FS=":"
+#read line
+#echo "$line"
+#sed -e ' "grep -n 4 test | gawk '{print $1}' FS=":"" s/4/999/' test
+
+sed -e '/4/99/d' test
+
+#grep -n 4 test | gawk '{print $1}' FS=":" > sed ' s/4/999/' test
+
+for i in {1..10..1}
+do
+	echo "$i "
+done
