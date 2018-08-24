@@ -4,8 +4,8 @@
 
 		<head>
 				<style>
-					
-					header 
+
+					header
 					{
 					    background-color: #666;
 					    padding: 50px;
@@ -15,7 +15,7 @@
 					    height: 100px;
 					}
 
-					.container 
+					.container
 					{
 					    border-radius: 5px;
 					    background-color: #f2f2f2;
@@ -34,7 +34,7 @@
 					    box-sizing: border-box;
 					}
 
-					input[type=submit] 
+					input[type=submit]
 					{
 					    width: 10%;
 					    height: 5%;
@@ -47,7 +47,7 @@
 					    cursor: pointer;
 					}
 
-					input[type=submit]:hover 
+					input[type=submit]:hover
 					{
 					    background-color:  #b300b3;
 					}
@@ -61,10 +61,10 @@
 		</header>
 
 		<body>
-			
+
 			<div class="container">
 
-			<form name="feedback" onsubmit="return TextValidate()" method="post">	
+			<form name="feedback" onsubmit="return TextValidate()" method="post">
 
 				<h3> Name </h3>
 				<input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -81,7 +81,7 @@
 				<h3> Mobile Number </h3>
 				<input type="text" id="no" name="number" placeholder="1234567890">
 
-				<h3> How did you hear about us </h3>	
+				<h3> How did you hear about us </h3>
 				<input type="checkbox" name="source1" value="friend">Friend<br>
 				<input type="checkbox" name="source2" value="google">Google<br>
 				<input type="checkbox" name="source3" value="URL">followed URL<br>
@@ -102,31 +102,31 @@
 
 				<input type="submit" value="Submit">
 			</form>
-			
+
 			</div>
 
 		</body>
 
 		<script>
-			
+
 			function TextValidate()
 		 	{
 			    var n = document.forms["feedback"]["fname"].value;
 			    var a = document.forms["feedback"]["add"].value;
-			    var e = document.forms["feedback"]["mail"].value;			   
-			    if (n == "") 
+			    var e = document.forms["feedback"]["mail"].value;
+			    if (n == "")
 			    {
 			        alert("Name must be filled out");
 			        return false;
 	    		}
 
-	    		if (a == "") 
+	    		if (a == "")
 			    {
 			        alert("Address must be filled out");
 			        return false;
 	    		}
 
-	    		if (e == "") 
+	    		if (e == "")
 			    {
 			        alert("Email must be filled out");
 			        return false;
@@ -141,7 +141,7 @@
 
 			    x = document.getElementById("no").value;
 
-			    if (isNaN(x) || x < 10000000000 || x > 10) 
+			    if (isNaN(x) || x < 10000000000 || x > 10)
 			    {
 			        text = "Input not valid";
 			    } else {
@@ -151,7 +151,7 @@
 			}
 
 			function phonenumber()
-			{	
+			{
 
 			  x = document.getElementById("no").value;
 			  var phoneno = /^\d{10}$/;
@@ -159,12 +159,12 @@
 	          {
 			      return true;
 			  }
-			  
+
 			  else
 			  {
 			        alert("message");
 			        return false;
-			   }	
+			   }
 			}
 
 

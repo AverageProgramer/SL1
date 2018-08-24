@@ -135,7 +135,7 @@ int main(void)
         {
             printf("Successfully created consumer %d\n",i+1);
         }
-    }
+    }`
 
     for(i=0;i<prod_count;i++)
     {
