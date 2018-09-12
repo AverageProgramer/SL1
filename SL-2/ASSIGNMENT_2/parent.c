@@ -1,55 +1,50 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <sys/types.h>
-
+#include <unistd.h>
+#include<stdio.h>
+int cmpfunc (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
 
 int main()
 {
-    char *args[]={"./child",NULL};
-    int a[10],num,i;
+	int n;
+	printf("Enter n : \n");
+	scanf("%d",&n);
+	int a[n];
+	printf("Enter array : \n");
 
-     printf("enter the no. of elements u want to insert ");
-    scanf("%d",&num);
+	for (int i = 0; i < n; ++i)
+	{
+		scanf("%d",&a[i]);
+	}
+	
+	qsort(a, n, sizeof(int), cmpfunc);
+	
+	int pid;
 
-    for(i=0;i<num;i++)
-    {
-        printf("Enter element ");
-        scanf("%d",&a[i]);
-    }
+	pid=vfork();
 
-    int c,swap,d;
-     for (c = 0 ; c <num-1; c++)
-    {
-        for (d = 0 ; d < num- c - 1; d++)
-            {
+	if(pid==0)
+	{
+		char *arg[100];
+		
+		for(int i=0;i<n;i++)
+		{
+			arg[i]=(char*)malloc(100*sizeof(char));
+			sprintf(arg[i],"%d",a[i]);
 
-              if (a[d] > a[d+1])
-              {
-                swap       = a[d];
-                a[d]   = a[d+1];
-                a[d+1] = swap;
-              }
-        }
-  }
+		}
+		arg[n]=NULL;
+		printf("\nExexv : TO child\n");
+		execv("./childout",arg); 
 
-char output[100];
-
-for (i = 0 ; i < num; ++i)              // convertuing int arr to char arr
-{
-    output[i] = a[i] + '0';
-}
-output[i]='\0';
-
-char *argp[]={"./child.out",output,NULL};
-
-   int b = fork();
-
-    if (b == 0)
-      execv("./child.out",argp);
-
-    else
-        wait(NULL);
-
-    return 0;
-
+		
+	}
+	else
+	{
+		wait(NULL);
+		printf("\n\nIn parent");
+	}
+	return 0;
 }

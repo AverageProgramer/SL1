@@ -1,52 +1,47 @@
 #include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
 #include <sys/types.h>
-#include<string.h>
+#include <unistd.h>
 
-int main(int argc,char *argv[])
+
+int main(int argc,char* argv[])
 {
+	int n=argc;
+	
+	printf("In child : \n");
+	printf("\nSorted array : \n");
+	
+	int a[100];
+	for(int i=0;i<n;i++)
+	{
+		a[i]=atoi(argv[i]);
+		printf("%d ",a[i] );
+	}
+	printf("\n\nEnter element to binary search : ");
+	int ele;
+	scanf("%d",&ele);
 
-    int search,first,last,middle,array[100];
-    int i=0;
-    char args[100];
+	int l=0,r=n-1,mid=0,flag=0;
 
-    strcpy(args,argv[1]);
-
-    while(args[i]!='\0')
-    {
-        array[i] = args[i] - '0';
-        i++;
-    }
-
-     printf("Enter value to find\n");
-     scanf("%d",&search);
-
-       first = 0;
-       last = i - 1;
-       middle = (first+last)/2;
-
-       while (first <= last)
-       {
-          if (array[middle] < search)
-             first = middle + 1;
-          else if (array[middle] == search)
-          {
-             printf("%d found at location %d.\n", search, middle+1);
-             break;
-          }
-
-          else
-             last = middle - 1;
-
-          middle = (first + last)/2;
-       }
-
-       if (first > last)
-          printf("Not found! %d isn't present in the list.\n", search);
-
-     return 0;
-     
-     
-     //test
-
+	while(l<=r)
+	{
+		mid=(l+r)/2;
+		if(a[mid]==ele)
+		{
+			printf("\nFound at %d\n",mid );
+			flag=1;
+			break;
+		}
+		if(a[mid]>ele)
+		{
+			r=mid-1;
+		}
+		else
+			l=mid+1;
+	}
+	if(!flag)
+	{
+			printf("\nNot found");
+	}
+	return 0;
 }

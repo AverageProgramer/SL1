@@ -32,29 +32,24 @@ case "$choice" in
 	echo "Enter Dept : "
 	read Dept
 	
-	echo "$roll \t$name \t\t$Dept" >> "$filename"
+	echo "$roll \t$name \t\t$Dept" >> "$filename"	# >> for appending
 	echo "Done !!!"
 	;;
 
 4)	echo "Enter Roll No. to be deleted : "
 	read roll_to_delete
 	
-	grep -v $roll_to_delete $filename > temp
-	rm $filename
-	mv temp $filename
+	grep -v $roll_to_delete $filename > temp		# All files except that printed in temp
+	rm $filename						# Delete original
+	mv temp $filename						# Rename	
 	
 	echo "Done !!!"
 	;;
 
-5)    echo "Enter Roll No. to be deleted : "
-	read roll_to_update
-	
-	grep -v $roll_to_update $filename > temp
-	rm $filename
-	mv temp $filename
-	
-	
-	echo "Enter New Details"
+5)    echo "Enter Roll No. to be updated : "		# MODIFY
+	read roll_to_update	
+		
+	echo "Enter New Details"				# NEW DETAILS
 	echo "Enter Roll No. : "
 	read roll
 	
@@ -63,8 +58,8 @@ case "$choice" in
 	
 	echo "Enter Dept : "
 	read Dept
-	
-	echo "$roll \t$name \t\t$Dept" >> "$filename"
+
+	sed -i "/$roll_to_update */c $roll \t$name \t\t$Dept" $filename	# * for whole line
 	echo "Done !!!" 
 	
 	;;
