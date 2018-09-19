@@ -13,7 +13,7 @@
 			  font-weight: 700;
 			  letter-spacing: 10px;
 			  text-align: center;
-			  padding: 20px;
+			  padding: 10px;
 			  text-transform: uppercase;
 
 	    	}
@@ -54,8 +54,8 @@
 		}
 
 		input[type=text],select, textarea 
-		{
-		    width: 100%;
+		{	
+		    width: 50%;
 		    padding: 12px;
 		    border: 1px solid #ccc;
 		    border-radius: 4px;
@@ -68,7 +68,7 @@
 		    display: block;
 		}		
 
-		input[type=submit] 
+		input[type=submit] , [type=reset] 
 		{
 		    width: 15%;
 		    height: 5%;
@@ -86,7 +86,7 @@
 		  text-transform: uppercase;
 		}
 
-		input[type=submit]:hover 
+		input[type=submit][type=reset]:hover 
 		{
 		    background-color:  #b300b3;
 		}
@@ -214,35 +214,40 @@
 
 
 		<form name="registration"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-			<p><b>Registration for Football Club Fan Battle(FFCB)  </b> </p>
+			<p><b>Registration for Football Club Fan Battle(FFCB)  </b>
 			<br>	
 			
 			<p><h3>Description : </h3>
-			<h4>A debate will be held amongst fans of all clubs, to decide the ultimate football club</h4><br>
+			<h4>A debate will be held amongst fans of all clubs, to decide the ultimate football club</h4>
 								
 			<div class="container">
-				<h3> Name </h3>
-				<input type="text" id="fname" name="name" placeholder="Your name..">
+				<h3> Name * :</h3>
+				<input type="text" id="fname" name="name" placeholder="Your name.."
+				value="<?php echo isset($_POST["name"]) ? $_POST["name"] : '';?>" >
 				<span style="color:red;" class="error"><?php echo $nameErr;?></span><br>
 				
-				<h3> Email </h3>
-				<input type="text" id="mail" name="email" placeholder="abcd@email.com">
+				<h3> Email * :</h3>
+				<input type="text" id="mail" name="email" placeholder="abcd@email.com"
+				value="<?php echo isset($_POST["email"]) ? $_POST["email"] : '';?>" >
 				<span style="color:red;" class="error"><?php echo $emailErr;?></span><br>
 				
-				<h3> Mobile Number </h3>
-				<input type="text" id="no" name="mobile" placeholder="1234567890">
+				<h3> Mobile Number * :</h3>
+				<input type="text" id="no" name="mobile" placeholder="1234567890"
+				value="<?php echo isset($_POST["mobile"]) ? $_POST["mobile"] : '';?>" >
 				<span style="color:red;" class="error"><?php echo $mobileErr;?></span><br>
 				
-				<h3> Favourite Club </h3>
-				<input type="text" id="no" name="team" placeholder="Football FC">
+				<h3> Favourite Club * :</h3>
+				<input type="text" id="no" name="team" placeholder="Football FC"
+				value="<?php echo isset($_POST["team"]) ? $_POST["team"] : '';?>" >
 				<span style="color:red;" class="error"><?php echo $teamErr;?></span><br>
 				
-				<h3> Country </h3>
-				<input type="text" id="no" name="country" placeholder="cleeverland">
+				<h3> Country * :</h3>
+				<input type="text" id="no" name="country" placeholder="cleeverland"
+				value="<?php echo isset($_POST["country"]) ? $_POST["country"] : '';?>" >
 				<span style="color:red;" class="error"><?php echo $countryErr;?></span><br>
 				
 				
-				<h3> XP in football </h3>
+				<h3> XP in football * :</h3>
 				<label class="radio-inline">
 	  			<input type="radio" name="year" value="1" id="4">1 &nbsp&nbsp&nbsp&nbsp
 	  			<input type="radio" name="year" value="2" id="5">2 &nbsp&nbsp&nbsp&nbsp
@@ -261,7 +266,8 @@
 			</table>
   			<center>
   				 <input type="submit" name="Submit" value="Submit" >
-			<br><h4>Kindly Refresh the form to reset</h4>
+  				 <input type="reset" name="Reset" value="reset" >
+			<br>
 				</center>
 			
 			</div>
