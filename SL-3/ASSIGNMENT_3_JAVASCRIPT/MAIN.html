@@ -19,7 +19,7 @@
 					{
 					    border-radius: 5px;
 					    background-color: #f2f2f2;
-					    height: 150%;
+					    height: 250%;
 					    padding: 20px;
 					}
 
@@ -63,13 +63,7 @@
 		<body>
 
 			<div class="container">
-
-<<<<<<< HEAD
-			<form name="feedback" onsubmit="return validateForm()" method="post">	
-=======
-			<form name="feedback" onsubmit="return TextValidate()" method="post">
->>>>>>> d9617fbaa044bb8c09ae797bfd256bc49e281d6e
-
+			<form name="feedback" onsubmit="return validateForm()" method="POST">
 				<h3> Name </h3>
 				<input type="text" id="fname" name="name" placeholder="Your name..">
 
@@ -78,9 +72,6 @@
 
 				<h3> Email </h3>
 				<input type="text" id="mail" name="email" placeholder="abcd@email.com">
-
-				<h3> Pincode </h3>
-				<input type="text" id="pin" name="pincode" placeholder="123456">
 
 				<h3> Mobile Number </h3>
 				<input type="text" id="no" name="mobile" placeholder="1234567890">
@@ -112,9 +103,8 @@
 		</body>
 
 		<script>
-<<<<<<< HEAD
-			
-			function validateForm() 
+
+			function validateForm()
 			{
 			    var name = document.forms["feedback"]["name"];
 				var address = document.forms["feedback"]["address"];
@@ -122,7 +112,7 @@
 				var mobile = document.forms["feedback"]["mobile"];
 				if(!mobilevalid(mobile))
 				{
-					window.alert("Phone Number must be filled out");
+					alert("Phone Number must be filled out");
 					return false;
 				}
 				if(!emailvalid(email))
@@ -137,7 +127,7 @@
 				}
 				if(!checkboxvalid())
 				{
-					alert("Please Click on how you hear about us ?");
+					alert("Please tell, how you heard about us ?");
 					return false;
 				}
 				if(!radiovalid())
@@ -146,7 +136,6 @@
 					return false;
 				}
 				return true;
-=======
 
 			function TextValidate()
 		 	{
@@ -172,69 +161,67 @@
 	    		}
 
 	    		if(n.search("/\d"))
->>>>>>> d9617fbaa044bb8c09ae797bfd256bc49e281d6e
 			}
-			
+
 			function checkboxvalid()
 			{
-<<<<<<< HEAD
-				if(document.getElementById('1').checked 
+				if(document.getElementById('1').checked
 				|| document.getElementById('2').checked || document.getElementById('3').checked)
 				{
 					return true;
 				}
-				
+
 				else
 				{
 					return false;
 				}
-				
+
 			}
-			
+
 			function radiovalid()
 			{
-					if(document.getElementById('4').checked 
+					if(document.getElementById('4').checked
 					|| document.getElementById('5').checked||document.getElementById('6').checked)
 					{
 						return true;
 					}
-					
+
 					else
 					{
 						return false;
 					}
-					
+
 			}
-			
+
 			function namevalid(name)
 			{
 				name = document.forms["feedback"]["name"];
 				var letters = /^[A-Za-z]+$/;
 				var x = document.forms["feedback"]["name"].value;
-				
-				if(letters.test(x))			
+
+				if(letters.test(x))
 				{
 					return true;
 				}
-				
+
 				else
 				{
 					return false;
 				}
-				
+
 		    	if (name.value == ""|| name.value == " ")
 		    	{
 				  return false;
 		    	}
-		    	
+
 		    	if (name.value.match(/\d/).length>0)
 		    	{
 				  return false;
 		    	}
-		    	
+
 		    	return true;
 			}
-			
+
 			function addressvalid(address)
 			{
 				var address = document.forms["feedback"]["address"];
@@ -243,10 +230,10 @@
 				  window.alert("address must be filled out");
 				  return false;
 				 }
-				 
+
 			    return true;
 			}
-			
+
 			function emailvalid(email)
 			{
 				var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -259,33 +246,29 @@
 				{
 					return false;
 				}
-		
+
 			 }
-						 
+
 			 function mobilevalid(mobile)
 			 {
 				 	mobile = document.forms["feedback"]["mobile"];
-					if (mobile.value == "") 
+					if (mobile.value == "")
 					{
 				  		return false;
 			   		}
-			   		
+
 					patt= /^[1-9]{1}[0-9]{9}$/;
-			    if (!patt.test(mobile.value)) 
-=======
+			    if (!patt.test(mobile.value))
 			    var x, text;
 
 			    x = document.getElementById("no").value;
 
 			    if (isNaN(x) || x < 10000000000 || x > 10)
->>>>>>> d9617fbaa044bb8c09ae797bfd256bc49e281d6e
 			    {
 			    	return false;
 			    }
-<<<<<<< HEAD
-			    
+
 			    return true;
-=======
 			    document.getElementById("demo").innerHTML = text;
 			}
 
@@ -304,7 +287,6 @@
 			        alert("message");
 			        return false;
 			   }
->>>>>>> d9617fbaa044bb8c09ae797bfd256bc49e281d6e
 			}
 
 		</script>
